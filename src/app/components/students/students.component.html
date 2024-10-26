@@ -1,0 +1,28 @@
+<section class="students">
+  <div class="title">Students List</div>
+  <div class="alert" *ngIf="students.length < 1">Nothing to show, please add a new student...</div>
+  <table class="table" *ngIf="students.length > 0">
+    <tr>
+      <th>Name</th>
+      <th>Surname</th>
+      <th>Degree</th>
+      <th>Id</th>
+    </tr>
+    <tr *ngFor="let student of students">
+      <td>{{ student.name }}</td>
+      <td>{{ student.surname }}</td>
+      <td>{{ student.degree }}</td>
+      <td>
+        <div class="action-cell">
+          {{ student.id }}
+          <button (click)="remove(student.id)">x</button>
+        </div>
+      </td>
+    </tr>
+  </table>
+  <button class="add-button" (click)="showModal = true">Add New Student</button>
+
+  <custom-modal *ngIf="showModal" (close)="showModal = false">
+    <add-student-modal-content [students]="students" (close)="handleModalClose()"></add-student-modal-content>
+  </custom-modal>
+</section>

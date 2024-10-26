@@ -1,0 +1,76 @@
+.students {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
+
+.title {
+  width: 100%;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 20px;
+  color: var(--yellow);
+}
+
+.alert {
+  text-align: center;
+}
+
+.table {
+  border-collapse: collapse;
+  border-radius: 8px;
+  width: 100%;
+  td,
+  th {
+    border: 1px solid var(--yellow);
+    text-align: left;
+    padding: 8px;
+  }
+}
+
+.action-cell {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+
+  & button {
+    background-color: var(--light);
+    color: #fff;
+    width: 100%;
+    max-width: 30px;
+    height: 30px;
+    line-height: 30px;
+    font-weight: 800;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    font-weight: 400;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+}
+
+.add-button {
+  background-color: var(--orange);
+  color: #fff;
+  text-transform: uppercase;
+  width: 100%;
+  max-width: 240px;
+  padding: 10px 15px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  outline: none;
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    background-color: var(--light-dark);
+  }
+}

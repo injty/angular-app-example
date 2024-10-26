@@ -1,0 +1,11 @@
+<div class="content">
+  <div class="inputs">
+    <input [(ngModel)]="name" type="text" placeholder="Name" maxlength="30" />
+    <input [(ngModel)]="surname" type="text" placeholder="Surname" maxlength="30" />
+    <input [(ngModel)]="degree" type="number" placeholder="Degree" min="0" max="2" (input)="maxLength($event)" />
+  </div>
+  <div class="buttons">
+    <button (click)="closeModal()" class="cancel">Close</button>
+    <button (click)="submit()" class="submit">Submit</button>
+  </div>
+</div>

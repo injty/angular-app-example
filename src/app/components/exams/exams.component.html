@@ -1,0 +1,31 @@
+<section class="exams">
+  <div class="title">Exams List</div>
+  <div class="alert" *ngIf="exams.length < 1">Nothing to show, please add a new student...</div>
+  <table class="table" *ngIf="exams.length > 0">
+    <tr>
+      <th>Student</th>
+      <th>Lesson</th>
+      <th>Date</th>
+      <th>Grade</th>
+      <th>Id</th>
+    </tr>
+    <tr *ngFor="let exam of exams">
+      <!-- <td>{{ students.find((student) => student.id === exam.student_id)?.name }}</td> -->
+      <td>{{ getStudentById(exam.student_id) }}</td>
+      <td>{{ getLessonById(exam.lesson_id) }}</td>
+      <td>{{ exam.exam_date }}</td>
+      <td>{{ exam.grade }}</td>
+      <td>
+        <div class="action-cell">
+          {{ exam.id }}
+          <button (click)="remove(exam.id)">x</button>
+        </div>
+      </td>
+    </tr>
+  </table>
+  <button class="add-button" (click)="showModal = true">Add new exam</button>
+
+  <custom-modal *ngIf="showModal" (close)="showModal = false">
+    <add-exam-modal-content (close)="handleModalClose()" [exams]="exams"></add-exam-modal-content>
+  </custom-modal>
+</section>

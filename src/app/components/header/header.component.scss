@@ -1,0 +1,15 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 25px 20px;
+  background-color: var(--black);
+  box-shadow: 1px 1px 2px 0px var(--dark);
+  margin-bottom: 40px;
+}
+
+.logotype {
+  font-weight: 900;
+  color: var(--green);
+}

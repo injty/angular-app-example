@@ -1,0 +1,14 @@
+<div class="content">
+  <div class="inputs">
+    <input [(ngModel)]="name" type="text" placeholder="Enter lesson name" maxlength="30" />
+    <input [(ngModel)]="degree" type="number" placeholder="Degree" min="0" max="2" (input)="maxLength($event)" />
+  </div>
+  <select name="teacherSelect" id="teacherSelect" [(ngModel)]="data.teacherSelect">
+    <option [ngValue]="null" disabled>Select teacher</option>
+    <option [ngValue]="teacher" *ngFor="let teacher of teachers">{{teacher.name}} {{teacher.surname}}</option>
+  </select>
+  <div class="buttons">
+    <button (click)="this.close.emit()" class="cancel">Close</button>
+    <button (click)="submit()" class="submit">Submit</button>
+  </div>
+</div>

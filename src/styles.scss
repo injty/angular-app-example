@@ -1,1 +1,132 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --black: #1a1a1a;
+  --dark: #212121;
+  --light: #9f9f9f;
+  --light-dark: #363636;
+  --red: #e36464;
+  --green: #859900;
+  --orange: #b58900;
+  --yellow: #dfc08a;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Rubik", sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+  background-color: var(--dark);
+  color: var(--light);
+  font-size: 0.95rem;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  position: fixed;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 395px;
+  padding: 45px 20px;
+  background-color: var(--light-dark);
+  border: none;
+  border-radius: 10px;
+
+  & select {
+    width: 100%;
+    max-width: 295px;
+    padding: 10px 15px;
+    box-shadow: none;
+    border-width: 0px;
+    height: 40px;
+    box-shadow: 1px 1px 2px 0px var(--light-dark);
+    border-radius: 5px;
+    outline: none;
+    background-color: var(--black);
+    color: var(--light);
+    font-weight: 300;
+  }
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+
+  & input {
+    width: 100%;
+    max-width: 295px;
+    padding: 10px 15px;
+    box-shadow: none;
+    border-width: 0px;
+    height: 40px;
+    box-shadow: 1px 1px 2px 0px var(--light-dark);
+    border-radius: 5px;
+    outline: none;
+    background-color: var(--black);
+    color: var(--light);
+    font-weight: 300;
+  }
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+
+  & button {
+    width: 100%;
+    max-width: 140px;
+    padding: 10px 15px;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    outline: none;
+    font-weight: 300;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+
+    &.cancel {
+      color: #fff;
+      background-color: var(--light-dark);
+      border: 1px solid var(--red);
+      &:hover {
+        background-color: var(--red);
+      }
+    }
+
+    &.submit {
+      color: #fff;
+      background-color: var(--light-dark);
+      border: 1px solid var(--green);
+      &:hover {
+        background-color: var(--green);
+      }
+    }
+  }
+}

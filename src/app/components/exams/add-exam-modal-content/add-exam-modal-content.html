@@ -1,0 +1,23 @@
+<div>
+  <div class="content">
+    <div class="inputs">
+      <select name="lessonSelect" id="lessonSelect" [(ngModel)]="data.lessonSelect">
+        <option [ngValue]="null" disabled>Select lesson</option>
+        <option [ngValue]="lesson.id" *ngFor="let lesson of lessons">{{lesson.name}}</option>
+      </select>
+
+      <select name="studentSelect" id="studentSelect" [(ngModel)]="data.studentSelect">
+        <option [ngValue]="null" disabled>Select student</option>
+        <option [ngValue]="student.id" *ngFor="let student of students">{{student.name}} {{student.surname}}</option>
+      </select>
+
+      <input type="date" name="examDate" id="examDate" [(ngModel)]="data.examDate" />
+
+      <input [(ngModel)]="grade" type="number" placeholder="Grade" min="0" max="2" (input)="maxLength($event)" />
+    </div>
+    <div class="buttons">
+      <button (click)="close.emit()" class="cancel">Close</button>
+      <button (click)="submit()" class="submit">Submit</button>
+    </div>
+  </div>
+</div>
