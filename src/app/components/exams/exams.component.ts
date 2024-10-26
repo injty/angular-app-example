@@ -54,6 +54,7 @@ export class ExamsComponent {
   }
 
   remove(id: number): void {
-    this.exams = this.exams.filter((exam) => exam.id !== id);
+    this.ExamsService.removeExam(id);
+    this.exams = this.ExamsService.getExams();
   }
 }

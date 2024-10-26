@@ -28,6 +28,7 @@ export class LessonsComponent {
   }
 
   remove(id: number): void {
-    this.lessons = this.lessons.filter((lesson) => lesson.id !== id);
+    this.LessonsService.removeLessons(id);
+    this.lessons = this.LessonsService.getLessons();
   }
 }

@@ -30,6 +30,7 @@ export class StudentsComponent {
   // NOTE: this is just for deleting a student
   // can be deleting with ID if it's come from backend
   remove(id: number): void {
-    this.students = this.students.filter((student) => student.id !== id);
+    this.studentService.removeStudents(id);
+    this.students = this.studentService.getStudents();
   }
 }

@@ -18,4 +18,8 @@ export class StudentService {
   getStudents(): Student[] {
     return this.students;
   }
+
+  removeStudents(id: number): void {
+    this.students = this.students.filter((student) => student.id !== id);
+  }
 }

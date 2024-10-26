@@ -18,4 +18,8 @@ export class ExamsService {
   getExams(): Exam[] {
     return this.exams;
   }
+
+  removeExam(id: number): void {
+    this.exams = this.exams.filter((exam) => exam.id !== id);
+  }
 }

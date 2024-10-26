@@ -5,19 +5,23 @@ import { Lesson } from "../models/lesson.model";
   providedIn: "root",
 })
 export class LessonsService {
-  private Lessons: Lesson[] = [
+  private lessons: Lesson[] = [
     {
       id: 1,
       name: "Math",
       degree: 1,
       teacher: {
-        name: "John",
-        surname: "Doe",
+        name: "James",
+        surname: "Smith",
       },
     },
   ];
 
   getLessons(): Lesson[] {
-    return this.Lessons;
+    return this.lessons;
+  }
+
+  removeLessons(id: number): void {
+    this.lessons = this.lessons.filter((lesson) => lesson.id !== id);
   }
 }
